@@ -1,0 +1,27 @@
+server:
+  port: 8080
+  error:
+    include-message: always
+    include-binding-errors: always
+    include-exception: false
+    include-stacktrace: never
+
+spring:
+  application:
+    name:
+      restaurant-core
+
+  datasource:
+    type: com.zaxxer.hikari.HikariDataSource
+    url: jdbc:mysql://localhost:3306/restaurants?useSSL=false&allowPublicKeyRetrieval=true
+    username: user
+    password: pass
+    hikari:
+      poolName: hikari-n1u-pool
+      auto-commit: false
+      idle-timeout: 300000
+      max-lifetime: 900000
+      maximum-pool-size: 15
+      minimum-idle: 3
+  main:
+    web-application-type: servlet
